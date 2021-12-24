@@ -3,24 +3,28 @@ import { Text, View, StyleSheet, FlatList } from 'react-native';
 
 const ListScreen = () => {
 
-    const friends = [
-        { name: 'friend#1', age: '10' },
-        { name: 'friend#2', age: '11' },
-        { name: 'friend#3', age: '12' },
-        { name: 'friend#4', age: '13' },
-        { name: 'friend#5', age: '14' },
-        { name: 'friend#6', age: '15' }
+    const students = [
+        { name: 'student#1', Age: '10' },
+        { name: 'student#2', Age: '11' },
+        { name: 'student#3', Age: '12' },
+        { name: 'student#4', Age: '13' },
+        { name: 'student#5', Age: '14' },
+        { name: 'student#6', Age: '15' },
+        { name: 'student#7', Age: '16' },
+        { name: 'student#8', Age: '17' },
+        { name: 'student#9', Age: '18' },
+        { name: 'student#10', Age: '19' }
     ]
 
     return (
         <View>
             <FlatList
-                showsVerticalScrollIndicator={false}
-                keyExtractor={friend => friend.name}
-                data={friends}
+                showsVerticalScrollIndicator={true}
+                data={students}
                 renderItem={({ item }) => {
-                    return <Text style={styles.textStyle}>{item.name}    -    Age:{item.age}</Text>
+                    return <Text style={styles.textStyle}>{item.name}   -   Age:{item.Age}</Text>
                 }}
+                keyExtractor={student => student.name}
             />
         </View>
     )
@@ -28,8 +32,8 @@ const ListScreen = () => {
 
 const styles = StyleSheet.create({
     textStyle: {
-        fontSize: 30,
-        marginVertical: 50
+        fontSize: 25,
+        marginVertical: 40
     }
 });
 
